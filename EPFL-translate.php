@@ -39,7 +39,8 @@ function EPFL_theme_after_language_switcher ( $languages ) {
   foreach ( $langsToAutoTranslate as $key => $value ) {
     echo "<li>";
     echo "\t<a href='" . getGoogleTranslateURL( get_current_language(), $value ) . "' aria-label='' class='dropdown-item'>";
-    echo "\t\t<span>" . strtoupper( $value ) . " 🈂️</span>";
+    echo "\t\t<span>" . strtoupper( $value ) . "</span>";
+    echo "\t\t<svg class='icon' aria-hidden='true'><use xlink:href='#icon-translate'></use></svg>";
     echo "\t</a>";
     echo "</li>";
   }
