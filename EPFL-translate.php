@@ -58,15 +58,15 @@ function display_banner()
     case "fr":
       $translation = "Traduction automatique";
       $message =
-          "Cette page a été traduite automatiquement à l’aide de Google Translate et peut contenir des erreurs. En cas de doute, veuillez consulter le <a href='$current_url' class='alert-link'>texte original</a>.";
+          "Cette page a été traduite automatiquement à l’aide de Google Translate et peut contenir des erreurs. En cas de doute, veuillez consulter le <a href='$current_url' class='alert-link notranslate'>texte original</a>.";
       break;
     case "de":
       $translation = "Automatische Übersetzung";
-      $message = "Diese Seite wurde automatisch mit Google Translate übersetzt und kann Fehler enthalten. Im Zweifelsfall konsultieren Sie bitte den <a href='$current_url' class='alert-link'>Originaltext</a>.";
+      $message = "Diese Seite wurde automatisch mit Google Translate übersetzt und kann Fehler enthalten. Im Zweifelsfall konsultieren Sie bitte den <a href='$current_url' class='alert-link notranslate'>Originaltext</a>.";
       break;
     case "it":
       $translation = "Traduzione automatica";
-      $message = "Questa pagina è stata tradotta automaticamente con Google Translate e potrebbe contenere errori. In caso di dubbi, si prega di fare riferimento al <a href='$site_url' class='alert-link'>testo originale</a>.";
+      $message = "Questa pagina è stata tradotta automaticamente con Google Translate e potrebbe contenere errori. In caso di dubbi, si prega di fare riferimento al <a href='$site_url' class='alert-link notranslate'>testo originale</a>.";
       break;
     default:
       $translation = "Automatic translation";
