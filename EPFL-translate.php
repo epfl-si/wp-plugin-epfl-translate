@@ -70,7 +70,7 @@ function display_banner()
       break;
     default:
       $translation = "Automatic translation";
-      $message = "This page was automatically translated using Google Translate and may contain errors. If in doubt, please refer to the  <a href='$current_url' class='alert-link notranslate'>original text</a>.";
+      $message = "This page was automatically translated using Google Translate and may contain errors. If in doubt, please refer to the  <a href='$current_url' class='alert-link'>original text</a>.";
   }
   ?>
 
