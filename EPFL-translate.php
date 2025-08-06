@@ -11,10 +11,10 @@
  * Plugin Name: EPFL Translate
  * Plugin URI:  https://github.com/epfl-si/wp-plugin-epfl-translate
  * Description: Tweak the polylang language chooser widget to add a link to Google Translate
- * Version:     0.2.0
+ * Version:     1.0.0
  * Author:      ISAS-FSD
  * Author URI:  https://go.epfl.ch/idev-fsd
- * Contributor: Nicolas Borboën <nicolas.borboen@epfl.ch>
+ * Contributor: Nicolas Borboën <nicolas.borboen@epfl.ch>, Saskya Panchaud <saskya.panchaud@epfl.ch>
  * Text Domain: EPFL-Translate
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
