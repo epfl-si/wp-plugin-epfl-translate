@@ -99,7 +99,7 @@ function display_banner () {
   }
   ?>
 
-  <div id="wp-body-open-marker"></div>'
+  <div id="wp-body-open-marker"></div>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const isTranslated = window.location.hostname.includes("translate.goog");
