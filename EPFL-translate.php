@@ -49,11 +49,10 @@ add_action( 'EPFL_theme_after_language_switcher', '\EPFLTranslate\EPFL_theme_aft
 
 add_filter( 'EPFL_theme_2018_max_inline_languages_count', function () { return 0; } );
 
-function display_banner()
-{
+function display_banner () {
   global $wp;
   $lang = get_current_language();
-  $current_url = home_url(add_query_arg(array(), $wp->request));
+  $current_url = home_url( add_query_arg( array(), $wp->request ) );
   switch ($lang) {
     case "fr":
       $translation = "Traduction automatique";
@@ -75,30 +74,31 @@ function display_banner()
   ?>
 
   <div id="wp-body-open-marker"></div>'
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const isTranslated = window.location.hostname.includes("translate.goog");
-        if (!isTranslated) return;
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const isTranslated = window.location.hostname.includes("translate.goog");
+      if (!isTranslated) return;
 
-        const marker = document.getElementById("wp-body-open-marker");
-        if (!marker) return;
+      const marker = document.getElementById("wp-body-open-marker");
+      if (!marker) return;
 
-        const banner = document.createElement("div");
-        banner.innerHTML = `
-            <div class="container">
-                <div class="alert alert-info alert-dismissible fade show" role="alert" style="margin-bottom:0;">
-                    <strong><?php echo $translation; ?>
-                    </strong> <?php echo "$message"; ?>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="this.parentElement.style.display='none';">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-        `;
+      const banner = document.createElement("div");
+      banner.innerHTML = `
+        <div class="container">
+          <div class="alert alert-info alert-dismissible fade show" role="alert" style="margin-bottom:0;">
+            <strong><?php echo $translation; ?>
+            </strong> <?php echo "$message"; ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="this.parentElement.style.display='none';">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      `;
 
-        marker.insertAdjacentElement("afterend", banner);
-      });
-    </script>
+      marker.insertAdjacentElement("afterend",banner);
+    });
+  </script>
 <?php
 }
-add_action('wp_body_open', '\EPFLTranslate\display_banner');
+
+add_action( 'wp_body_open', '\EPFLTranslate\display_banner' );
