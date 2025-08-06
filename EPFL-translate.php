@@ -1,11 +1,37 @@
 <?php
 /**
+ * EPFL Translate
+ *
+ * @package     EPFLTranslate
+ * @author      ISAS-FSD
+ * @copyright   Copyright (c) 2025, EPFL
+ * @license     GPL-2.0-or-later
+ *
+ * @wordpress-plugin
  * Plugin Name: EPFL Translate
+ * Plugin URI:  https://github.com/epfl-si/wp-plugin-epfl-translate
  * Description: Tweak the polylang language chooser widget to add a link to Google Translate
  * Version:     0.2.0
- * Author:      ISAS-FSD https://github.com/epfl-si/
+ * Author:      ISAS-FSD
+ * Author URI:  https://go.epfl.ch/idev-fsd
+ * Contributor: Nicolas Borboën <nicolas.borboen@epfl.ch>
  * Text Domain: EPFL-Translate
- **/
+ * License:     GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ *
+ * EPFL Translate is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * any later version.
+ *
+ * EPFL Translate is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with EPFL Translate. If not, see <http://www.gnu.org/licenses/>.
+ */
 
 namespace EPFLTranslate;
 
