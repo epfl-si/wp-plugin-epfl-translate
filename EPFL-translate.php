@@ -105,6 +105,11 @@ function display_banner () {
       const isTranslated = window.location.hostname.includes("translate.goog");
       if (!isTranslated) return;
 
+      const navLang = document.querySelector('.nav-lang');
+      if (navLang) {
+          navLang.style.display = 'none';
+      }
+
       const marker = document.getElementById("wp-body-open-marker");
       if (!marker) return;
 
