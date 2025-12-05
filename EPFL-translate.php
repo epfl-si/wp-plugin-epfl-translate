@@ -116,12 +116,9 @@ function display_banner () {
       const banner = document.createElement("div");
       banner.innerHTML = `
         <div class="container">
-          <div class="alert alert-info alert-dismissible fade show" role="alert" style="margin-bottom:0;">
+          <div class="alert alert-info fade show" role="alert" style="margin-bottom:0;">
             <strong><?php echo $translation; ?>
             </strong> <?php echo "$message"; ?>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="this.parentElement.style.display='none';">
-              <span aria-hidden="true">&times;</span>
-            </button>
           </div>
         </div>
       `;
