@@ -91,7 +91,7 @@ function display_banner () {
       break;
     case "it":
       $translation = "Traduzione automatica";
-      $message = "Questa pagina è stata tradotta automaticamente con Google Translate e potrebbe contenere errori. In caso di dubbi, si prega di fare riferimento al <a href='$site_url' class='alert-link'>testo originale</a>.";
+      $message = "Questa pagina è stata tradotta automaticamente con Google Translate e potrebbe contenere errori. In caso di dubbi, si prega di fare riferimento al <a href='$current_url' class='alert-link'>testo originale</a>.";
       break;
     default:
       $translation = "Automatic translation";
