@@ -11,10 +11,10 @@
  * Plugin Name: EPFL Translate
  * Plugin URI:  https://github.com/epfl-si/wp-plugin-epfl-translate
  * Description: Tweak the polylang language chooser widget to add a link to Google Translate
- * Version:     1.1.0
+ * Version:     1.2.0
  * Author:      ISAS-FSD
  * Author URI:  https://go.epfl.ch/idev-fsd
- * Contributor: Nicolas Borboën <nicolas.borboen@epfl.ch>, Saskya Panchaud <saskya.panchaud@epfl.ch>
+ * Contributor: Nicolas Borboën <nicolas.borboen@epfl.ch>, Saskya Panchaud <saskya.panchaud@epfl.ch>, Xurxo Adrián Entenza <xurxo-adrian.entenza@epfl.ch>
  * Text Domain: EPFL-Translate
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -130,3 +130,57 @@ function display_banner () {
 }
 
 add_action( 'wp_body_open', '\EPFLTranslate\display_banner' );
+
+add_action('wp_footer', '\EPFLTranslate\gtlr_inject_script');
+
+function gtlr_inject_script() {
+  ?>
+  <script>
+  (function () {
+
+    const hostname = window.location.hostname;
+
+    const isGoogleTranslate =
+      hostname.includes('translate.goog') ||
+      hostname.includes('translate.google');
+
+    if (!isGoogleTranslate) {
+      return;
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetLang = urlParams.get('_x_tr_tl');
+
+    if (!targetLang) {
+      return;
+    }
+
+    const alternateLinks = document.querySelectorAll(
+      'link[rel="alternate"][hreflang]'
+    );
+
+    let redirectUrl = null;
+
+    alternateLinks.forEach(link => {
+      const hreflang = link.getAttribute('hreflang');
+      if (hreflang === targetLang) {
+        redirectUrl = link.getAttribute('href');
+      }
+      else if (
+        hreflang &&
+        hreflang.toLowerCase().startsWith(targetLang.toLowerCase())
+      ) {
+        redirectUrl = link.getAttribute('href');
+      }
+    });
+
+    if (redirectUrl) {
+      if (window.location.href !== redirectUrl) {
+        window.location.replace(redirectUrl);
+      }
+    }
+
+  })();
+  </script>
+  <?php
+}
